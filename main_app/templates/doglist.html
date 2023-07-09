@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Dogs</h1>
+    <div class="gallery">
+        {% for dog in dogs %}
+        <a href="{% url 'dogs_detail' dog.pk %}">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-square">
+                <img src="{{dog.img}}" alt="{{dog.breed}}" />
+              </figure>
+            </div>
+            <div class="card-header">
+              
+            </div>
+            <ul>
+              <!-- <li><img src="{{movie.img}}"alt="movie"></li> -->
+            </ul>
+          </div>
+    </div>
+    {% for mix in dog.mixs.all %}
+    <div class="song">
+      <span>{{forloop.counter}}</span>
+      <span><b>{{mix.breed}}</b></span>
+    
+    </div>
+        {% empty %}
+    <article class="message">
+      <div class="message-header">
+      
+      </div>
+    </article>
+
+    {% endfor %}
+  </div>
+</article>
+{% endfor %}
+
+</div>
+{% endblock %}
+      
+  
+</body>
+</html>

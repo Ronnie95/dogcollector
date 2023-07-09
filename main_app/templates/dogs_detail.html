@@ -1,0 +1,22 @@
+{% extends 'base.html' %} 
+{% block content %}
+<a href="{% url 'dog_update' dog.pk %}" class="button is-info"> Updates
+    <a href="{% url 'dog_delete' dog.pk %}" class="button is-danger">Delete
+<div class="detail__img">
+    <img src="{{dog.img}}" alt="{{dog.breed}}" />
+</div>
+<div class="detail__name">
+    <div class="icon-text">
+        <span class="icon has-text-info">
+            <i class="fas fa-check-circle"></i>
+        </span>
+    </div>
+    <h1 class="title">{{dog.breed}}</h1>
+</div>
+    <div class="detail__about">
+        <h4 class="title is-4">About</h4>
+        <p>{{dog.life_expectancy}}</p>
+    </div>
+</div>
+
+{% endblock %}
